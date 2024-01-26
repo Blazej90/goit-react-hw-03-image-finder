@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.module.css';
 
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -14,7 +15,7 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <header className="searchbar">
+    <header className={styles.SearchBar}>
       <form className="form" onSubmit={handleSubmit}>
         <button type="submit" className="button">
           <span className="button-label">Search</span>

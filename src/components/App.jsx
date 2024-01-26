@@ -2,17 +2,21 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import ImageGallery from './ImageGallery';
 import Button from './Button';
+import Loader from './Loader';
+// import styles from './styles.module.css';
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!query) return;
 
     const fetchImages = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch(
           `https://pixabay.com/api/?q=${query}&page=${page}&key=41258332-bc5b81f30b9173b6d7f6fa8ea&image_type=photo&orientation=horizontal&per_page=12`
         );
@@ -20,6 +24,8 @@ const App = () => {
         setImages(prevImages => [...prevImages, ...data.hits]);
       } catch (error) {
         console.error('Error fetching images:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -40,6 +46,7 @@ const App = () => {
     <div className="App">
       <SearchBar onSubmit={handleSearchSubmit} />
       <ImageGallery images={images} />
+      {isLoading && <Loader />} {}
       <Button onClick={loadMoreImages} hasMore={images.length > 0} />
     </div>
   );

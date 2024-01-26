@@ -39,7 +39,7 @@ img {
 /*
  * Стили компонента Searchbar
  */
-.Searchbar {
+.SearchBar {
   top: 0;
   left: 0;
   position: sticky;
@@ -71,7 +71,7 @@ img {
   overflow: hidden;
 }
 
-.SearchForm-button {
+.SearchFormButton {
   display: inline-block;
   width: 48px;
   height: 48px;
