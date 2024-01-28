@@ -37,7 +37,7 @@ img {
 }
 
 /*
- * Стили компонента Searchbar
+ * Styles Searchbar
  */
 .SearchBar {
   top: 0;
@@ -59,7 +59,7 @@ img {
 }
 
 /*
- * Стили компонента SearchForm
+ * Styles SearchForm
  */
 .SearchForm {
   display: flex;
@@ -76,7 +76,8 @@ img {
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+  /* background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg'); */
+  background-image: url('https://www.flaticon.com/free-icons/search-bar" title="search bar icons');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -86,11 +87,11 @@ img {
   outline: none;
 }
 
-.SearchForm-button:hover {
+.SearchFormButton:hover {
   opacity: 1;
 }
 
-.SearchForm-button-label {
+.SearchFormButtonLabel {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -102,7 +103,7 @@ img {
   border: 0;
 }
 
-.SearchForm-input {
+.SearchFormInput {
   display: inline-block;
   width: 100%;
   font: inherit;
@@ -113,13 +114,13 @@ img {
   padding-right: 4px;
 }
 
-.SearchForm-input::placeholder {
+.SearchFormInput::placeholder {
   font: inherit;
   font-size: 18px;
 }
 
 /*
- * Стили компонента ImageGallery
+ * Styles ImageGallery
  */
 .ImageGallery {
   display: grid;
@@ -135,7 +136,7 @@ img {
 }
 
 /*
- * Стили компонента ImageGalleryItem
+ * Styles ImageGalleryItem
  */
 .ImageGalleryItem {
   border-radius: 2px;
@@ -143,20 +144,20 @@ img {
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-.ImageGalleryItem-image {
+.ImageGalleryItemImage {
   width: 100%;
   height: 260px;
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ImageGalleryItem-image:hover {
+.ImageGalleryItemImage:hover {
   transform: scale(1.03);
   cursor: zoom-in;
 }
 
 /*
- * Стили компонента Modal
+ * Styles Modal
  */
 
 .Overlay {
@@ -178,9 +179,9 @@ img {
 }
 
 /*
-* Стили компонента Buton (Load more)
+* Styles Buton (Load more)
 */
-.Button {
+.ButtonLoad {
   padding: 8px 16px;
   border-radius: 2px;
   background-color: #3f51b5;
@@ -201,7 +202,22 @@ img {
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
-.Button:hover,
-.Button:focus {
+.ButtonLoad:hover,
+.ButtonLoad:focus {
   background-color: #303f9f;
+}
+
+.ButtonLoadPosition {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/*
+* Styles Loader
+*/
+
+.Loader {
+  display: flex;
+  justify-content: center;
 }

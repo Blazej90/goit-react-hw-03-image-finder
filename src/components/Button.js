@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.module.css';
 
 const Button = ({ onClick, hasMore }) => {
   return (
     <>
       {hasMore && (
-        <button className="button" onClick={onClick}>
-          Load more
-        </button>
+        <div className={styles.ButtonLoadPosition}>
+          <button className={styles.ButtonLoad} onClick={onClick}>
+            Load more
+          </button>
+        </div>
       )}
     </>
   );

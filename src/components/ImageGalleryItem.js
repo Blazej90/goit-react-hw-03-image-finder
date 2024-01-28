@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.module.css';
 
 const ImageGalleryItem = ({ image }) => {
   return (
-    <li className="gallery-item">
-      <img src={image.webformatURL} alt="" className="gallery-item-image" />
+    <li className={styles.ImageGalleryItem}>
+      <img
+        src={image.webformatURL}
+        alt=""
+        className={styles.ImageGalleryItemImage}
+      />
     </li>
   );
 };
