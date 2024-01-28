@@ -3,13 +3,16 @@ import SearchBar from './SearchBar';
 import ImageGallery from './ImageGallery';
 import Button from './Button';
 import Loader from './Loader';
-// import styles from './styles.module.css';
+import Modal from './Modal';
+
+import styles from './styles.module.css';
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedImageUrl, setSelectedImageUrl] = useState(null);
 
   useEffect(() => {
     if (!query) return;
@@ -42,12 +45,24 @@ const App = () => {
     setPage(prevPage => prevPage + 1);
   };
 
+  const handleImageClick = imageUrl => {
+    setSelectedImageUrl(imageUrl);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageUrl(null);
+  };
+
   return (
-    <div className="App">
+    <div className={styles.App}>
       <SearchBar onSubmit={handleSearchSubmit} />
-      <ImageGallery images={images} />
-      {isLoading && <Loader />} {}
+      <ImageGallery images={images} onImageClick={handleImageClick} />
+      {isLoading && <Loader />}
       <Button onClick={loadMoreImages} hasMore={images.length > 0} />
+
+      {selectedImageUrl && (
+        <Modal imageUrl={selectedImageUrl} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
